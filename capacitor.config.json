@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "danillo-carvalho",
+  "appId": "com.i9dea.klumfy.danillocarvalho",
+  "appName": "danillo-carvalho-app",
   "bundledWebRuntime": false,
   "npmClient": "yarn",
   "webDir": "build",

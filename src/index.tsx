@@ -1,8 +1,19 @@
+import { initializeKlumfyApp, setKlumfyApp } from '@klumfy/core';
+import firebase from 'firebase/app';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import firebaseConfig from './config/credentials/firebase';
 import reportWebVitals from './reportWebVitals';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
+
+/** Setup Klumfy Application Service */
+if (!firebase.apps.length) {
+    const app = firebase.initializeApp(firebaseConfig)
+    const klumfyApp = initializeKlumfyApp(app)
+    setKlumfyApp(klumfyApp)
+}
 
 ReactDOM.render(
   <React.StrictMode>

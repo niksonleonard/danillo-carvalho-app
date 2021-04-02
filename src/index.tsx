@@ -1,4 +1,5 @@
-import { initializeKlumfyApp, setKlumfyApp } from '@klumfy/core';
+import { initializeKlumfyApp } from '@klumfy/core';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import firebase from 'firebase/app';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -11,14 +12,23 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 /** Setup Klumfy Application Service */
 if (!firebase.apps.length) {
     const app = firebase.initializeApp(firebaseConfig)
-    const klumfyApp = initializeKlumfyApp(app)
-    setKlumfyApp(klumfyApp)
+    initializeKlumfyApp(app)
 }
 
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+const theme = createMuiTheme({
+    palette: {
+       type: prefersDark.matches ? 'dark' : 'light',
+    }
+});
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <React.StrictMode>
+        <ThemeProvider theme={theme}>
+            <App />
+        </ThemeProvider>
+    </React.StrictMode>,
   document.getElementById('root')
 );
 

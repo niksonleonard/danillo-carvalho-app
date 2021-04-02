@@ -1164,6 +1164,13 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@capacitor-community/contacts@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@capacitor-community/contacts/-/contacts-0.1.1.tgz#ff1d95145e110e55eea0a33ec432624dada8af5a"
+  integrity sha512-d3TNaBTM7QI9y71hy7WD6VmDFBuByhEgTLywOg6hqSX1INtS1plRVN8U6NjklW0wxKDChLbf7M/zeE3Ojo/38Q==
+  dependencies:
+    "@capacitor/core" latest
+
 "@capacitor/android@^3.0.0-rc.0":
   version "3.0.0-rc.0"
   resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-3.0.0-rc.0.tgz#9dc6e82a1368310b5ddc99e5fb010be21d9cab34"
@@ -1197,6 +1204,13 @@
   integrity sha512-mg9k9iP+/yZ/uEqnOO+Pqc6Dqlyz98y19gNTP3q5dcUBVizGLaze615jt7xwjRppXlmCm+DMD1lN68ye8gU/dw==
   dependencies:
     tslib "^2.1.0"
+
+"@capacitor/core@latest":
+  version "2.4.7"
+  resolved "https://registry.yarnpkg.com/@capacitor/core/-/core-2.4.7.tgz#f3b4d5728db7e764c1153da5e67d369bda35b772"
+  integrity sha512-ZPzXXQ4EPwR/ZhNDkmlxyzw4FvquIl/ROj8HMMM0MEd4xZfM8ulNGPIL6br9TWdlFLGBKq40eymPZjKaivGnig==
+  dependencies:
+    tslib "^1.9.0"
 
 "@capacitor/ios@^3.0.0-rc.0":
   version "3.0.0-rc.0"

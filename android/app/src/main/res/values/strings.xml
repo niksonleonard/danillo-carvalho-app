@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">danillo-carvalho-app</string>
+    <string name="title_activity_main">danillo-carvalho-app</string>
+    <string name="package_name">com.i9dea.klumfy.danillocarvalho</string>
+    <string name="custom_url_scheme">com.i9dea.klumfy.danillocarvalho</string>
+</resources>

@@ -1,22 +1,40 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { CircularProgress } from '@material-ui/core';
 import React from 'react';
+import { RouteComponentProps } from 'react-router';
 import '../components/ExploreContainer.css';
 
-interface LoadingPageState
+export interface LoadingPageState
 {
-    isLoadingSomething: boolean
+    isLoadingSomething: boolean,
+    title?: string
 } 
 
-export class LoadingPage<T = {}, S extends LoadingPageState = { isLoadingSomething: false }> extends React.Component<T, S>
+export abstract class LoadingPage<T extends RouteComponentProps, S extends LoadingPageState = { isLoadingSomething: false }> extends React.Component<T, S>
 {
+    title: string = ''
+
     constructor(props: T, state: S)
     {
         super(props, state)
         this.state = {
             ...state,
-            isLoadingSomething: false
+            isLoadingSomething: false,
+            title: ''
         }
+    }
+
+    abstract pageContent(): JSX.Element
+    
+
+    turOnLoading()
+    {
+        this.setState({ isLoadingSomething: true})
+    }
+
+    turOffLoading()
+    {
+        this.setState({ isLoadingSomething: false})
     }
 
     addLoadingProccess(proccess: Promise<any>)
@@ -34,10 +52,10 @@ export class LoadingPage<T = {}, S extends LoadingPageState = { isLoadingSomethi
     render()
     {
         return (
-        <IonPage>
+        <IonPage  >
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>Tab 1</IonTitle>
+                    <IonTitle>{this.state.title}</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
@@ -50,7 +68,7 @@ export class LoadingPage<T = {}, S extends LoadingPageState = { isLoadingSomethi
                     ? <div className="container">
                         <CircularProgress />
                     </div>
-                    : this.props.children}
+                    : <div className="container">{this.pageContent()}</div>}
             </IonContent>
           </IonPage>
           )
